@@ -1,7 +1,6 @@
 @extends('layout')
 @section('content')
-
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-md-9">
                 <div class="card">
@@ -9,7 +8,7 @@
                         <h2>Student Application</h2>
                     </div>
                     <div class="card-body">
-                        <a href="{{ url('/students/create') }}" class="btn btn-succese btn-sm" title="Add New Students"> Add
+                        <a href="{{ url('/students/create') }}" class="btn btn-success btn-sm" title="Add New Students"> Add
                             new</a>
                         <br />
                         <br />
@@ -55,3 +54,4 @@
             </div>
         </div>
     </div>
+@endsection
