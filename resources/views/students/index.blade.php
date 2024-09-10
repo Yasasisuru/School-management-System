@@ -15,20 +15,38 @@
                         <br />
                         <div class="table-responsive">
                             <table class="table">
-                             <thead>
-                              <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>Address</th>
-                                <th>Mobile</th>
-                                <th>Action</th>
-                              </tr>
-                             </thead>
-                             <tbody>
-                                @foreach ($students as $item)
-
-                                @endforeach
-                             </tbody>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Address</th>
+                                        <th>Mobile</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($students as $item)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $item->name }}</td>
+                                            <td>{{ $item->address }}</td>
+                                            <td>{{ $item->mobile }}</td>
+                                            <td>
+                                                <a href="{{ url('/students/' . $item->id) }}" title="view students"><button
+                                                        class=" btn btn-info">View</button></a>
+                                                <a href="{{ url('/students/' . $item->id . '/edit') }}"
+                                                    title="edit students"><button class=" btn btn-primary">Edit</button></a>
+                                                <form method="POST" action="{{ url('/students' . '/' . $item->id) }}"
+                                                    accept-charset="UTF-8" style="display: inline">
+                                                    {{ @method_field('DELETE') }}
+                                                    {{ csrf_field() }}
+                                                    <button type="submit" class="btn btn-danges" title="Delete Students"
+                                                        onclick="return confirm(&quot;Confirm delete?&quot;)">delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
 
                             </table>
                         </div>
