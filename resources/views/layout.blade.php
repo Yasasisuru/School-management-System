@@ -38,7 +38,7 @@
             <div class=" border-right col-md-3 sidebar bg-col">
                 <div class="list-group list-group-flush mt-5 text-center p-2">
                     <a href="#" class="list-group-item list-group-item-action bg-col ">Home</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-col ">Student</a>
+                    <a href="{{ url('/students') }}" class="list-group-item list-group-item-action bg-col ">Student</a>
                     <a href="#" class="list-group-item list-group-item-action bg-col ">Teacher</a>
                     <a href="#" class="list-group-item list-group-item-action bg-col ">Courses</a>
                     <a href="#" class="list-group-item list-group-item-action bg-col ">Enrollment</a>
