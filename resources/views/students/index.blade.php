@@ -1,10 +1,10 @@
 @extends('layout')
 @section('content')
     <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-9">
+
+
                 <div class="card">
-                    <div class="card-hedder">
+                    <div class="card-hedder text-center">
                         <h2>Student Application</h2>
                     </div>
                     <div class="card-body">
@@ -39,7 +39,7 @@
                                                     accept-charset="UTF-8" style="display: inline">
                                                     {{ @method_field('DELETE') }}
                                                     {{ csrf_field() }}
-                                                    <button type="submit" class="btn btn-danges" title="Delete Students"
+                                                    <button type="submit" class="btn btn-danger" title="Delete Students"
                                                         onclick="return confirm(&quot;Confirm delete?&quot;)">delete</button>
                                                 </form>
                                             </td>
@@ -52,6 +52,5 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+  
 @endsection
