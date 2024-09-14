@@ -52,9 +52,14 @@ class StudentsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id):view
     {
-        //
+        $student = Students::find($id);
+        return view('students.edit')->with('student', $student);
+
+        // Fetch the student by ID
+
+
     }
 
     /**
@@ -62,7 +67,10 @@ class StudentsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $student = Students::find($id);
+        $input = $request->all();
+        $student->update($input);
+return redirect('students')->with('flash_message','students update');
     }
 
     /**

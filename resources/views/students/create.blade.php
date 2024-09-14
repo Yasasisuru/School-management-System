@@ -13,7 +13,7 @@
                 <input type="text" name="address" id="address" class="form-control"><br>
                 <label>Mobile</label><br>
                 <input type="text" name="mobile" id="obile" class="form-control"><br>
-                 <input type="submit" value="Save" class="btn btn-success">
+                 <input type="submit" value="Save" class="btn btn-outline-success">
             </form>
         </div>
     </div>
