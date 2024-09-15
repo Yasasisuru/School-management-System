@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Teacher; // Use singular model name
 use App\Models\Teachers;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Response;
-
-use App\Models\Teacher;
 use Illuminate\View\View;
 
 class TeacherController extends Controller
@@ -15,18 +13,18 @@ class TeacherController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index():view
+    public function index(): View
     {
-        $teachers = Teachers::all();
+        $teachers = Teachers::all(); // Use singular model name
 
         // Return the view with the teacher data
-        return view('teachers.index')->with('teacher',  $teachers);
+        return view('teachers.index')->with('teachers', $teachers); // Use 'teachers' instead of 'teacher'
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
         return view('teachers.create');
     }
@@ -37,30 +35,26 @@ class TeacherController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $input = $request->all();
-        Teachers::create($input);
-        return redirect('teachers')->with('flash_message','Teacher Added ! ');
+        Teachers::create($input); // Use singular model name
+        return redirect('teachers')->with('flash_message', 'Teacher Added!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id):view
+    public function show(string $id): View
     {
-        $teachers = Teachers::find($id);
-        return view('teachers.show')->with('teachers',  $teachers);
+        $teacher = Teachers::find($id); // Use singular model name
+        return view('teachers.show')->with('teacher', $teacher); // Use 'teacher' instead of 'teachers'
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id):view
+    public function edit(string $id): View
     {
-        $teachers = Teachers::find($id);
-        return view('teachers.edit')->with('teachers',  $teachers);
-
-        // Fetch the teacher by ID
-
-
+        $teacher = Teachers::find($id); // Use singular model name
+        return view('teachers.edit')->with('teacher', $teacher); // Use 'teacher' instead of 'teachers'
     }
 
     /**
@@ -68,10 +62,10 @@ class TeacherController extends Controller
      */
     public function update(Request $request, string $id): RedirectResponse
     {
-        $teachers = Teachers::find($id);
+        $teacher = Teachers::find($id); // Use singular model name
         $input = $request->all();
-        $teachers->update($input);
-return redirect('teacher')->with('flash_message','teacher update');
+        $teacher->update($input);
+        return redirect('teachers')->with('flash_message', 'Teacher updated'); // Redirect to 'teachers'
     }
 
     /**
@@ -79,7 +73,7 @@ return redirect('teacher')->with('flash_message','teacher update');
      */
     public function destroy(string $id): RedirectResponse
     {
-        Teachers::destroy($id);
-        return redirect('teacher')->with('flash_message','teacher deleted');
+        Teachers::destroy($id); // Use singular model name
+        return redirect('teachers')->with('flash_message', 'Teacher deleted'); // Redirect to 'teachers'
     }
 }
