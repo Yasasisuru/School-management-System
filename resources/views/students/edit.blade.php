@@ -6,7 +6,7 @@
     <div class="card">
         <div class="card-header">Contact page</div>
         <div class="body p-5">
-            <form action="{{ url('students/' . $student->id) }}" method="post">
+            <form action="{{ url('students/' . $student->id) }}" method="post" >
                 {!! csrf_field() !!}
                 @method("PATCH")
                 <input type="hidden" name="id" id="id" value="{{ $student->id }}">
