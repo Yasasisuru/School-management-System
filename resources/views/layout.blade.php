@@ -40,7 +40,8 @@
                     <a href="#" class="list-group-item list-group-item-action bg-col ">Home</a>
                     <a href="{{ url('/students') }}" class="list-group-item list-group-item-action bg-col ">Student</a>
                     <a href="{{ url('/teachers') }}" class="list-group-item list-group-item-action bg-col ">Teacher</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-col ">Courses</a>
+                    <a href="{{ url('/courses') }}" class="list-group-item list-group-item-action bg-col ">Courses</a>
+                    <a href="{{ url('/batches') }}" class="list-group-item list-group-item-action bg-col ">Batches</a>
                     <a href="#" class="list-group-item list-group-item-action bg-col ">Enrollment</a>
                     <a href="#" class="list-group-item list-group-item-action bg-col ">payments</a>
                 </div>
