@@ -8,11 +8,11 @@
             <form action="{{url('teachers')}}" method="post">
                 {!! csrf_field() !!}
                 <label>Name</label><br>
-                <input type="text" name="name" id="name" class="form-control"><br>
+                <input type="text" name="name" id="name" class="form-control" required><br>
                 <label>Address</label><br>
-                <input type="text" name="address" id="address" class="form-control"><br>
+                <input type="text" name="address" id="address" class="form-control" required><br>
                 <label>Mobile</label><br>
-                <input type="text" name="mobile" id="obile" class="form-control"><br>
+                <input type="text" name="mobile" id="obile" class="form-control" required><br>
                  <input type="submit" value="Save" class="btn btn-outline-success">
             </form>
         </div>

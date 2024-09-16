@@ -22,7 +22,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        return view('Courses.create');
     }
 
     /**
@@ -30,7 +30,9 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Course::create($input);
+        return redirect('courses')->with('Flash_message','Courses added');
     }
 
     /**
@@ -38,7 +40,8 @@ class CourseController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $courses= Course::find($id);
+        return view('courses.show')->with('courses', $courses);
     }
 
     /**
@@ -46,7 +49,8 @@ class CourseController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $courses= Course::find($id);
+        return view('courses.edit')->with('courses', $courses);
     }
 
     /**
@@ -54,7 +58,10 @@ class CourseController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $courses = Course::find($id);
+        $input = $request->all();
+        $courses = $courses->update($input);
+        return redirect('courses')->with('flash_message','course4s update');
     }
 
     /**
@@ -62,6 +69,7 @@ class CourseController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Course::destroy($id);
+        return redirect('courses')->with('flash_message','course deleted');
     }
 }
