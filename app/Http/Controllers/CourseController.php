@@ -11,7 +11,7 @@ class CourseController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index():view
     {
       $courses = Course::all();
       return view("Courses.index")->with('courses', $courses);

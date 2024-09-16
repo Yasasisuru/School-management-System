@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Batch;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class batchController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index():view
     {
-        //
+        $batches = Batch::all();
+        return view("Batches.index")->with('batches',$batches);
     }
 
     /**
@@ -19,7 +22,7 @@ class batchController extends Controller
      */
     public function create()
     {
-        //
+        return view('Batches.create');
     }
 
     /**
@@ -27,7 +30,9 @@ class batchController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Batch::create($input);
+        return redirect('batches')->with('Flash_message','batches added');
     }
 
     /**
@@ -35,7 +40,8 @@ class batchController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $batches= Batch::find($id);
+        return view('batches.show')->with('batches', $batches);
     }
 
     /**
@@ -43,7 +49,8 @@ class batchController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $batches= Batch::find($id);
+        return view('batches.edit')->with('batches', $batches);
     }
 
     /**
@@ -51,7 +58,10 @@ class batchController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $batches= Batch::find($id);
+        $input = $request->all();
+        $batches= $batches->update($input);
+        return redirect('batches')->with('flash_message','batches update');
     }
 
     /**
@@ -59,6 +69,8 @@ class batchController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+
+        Batch::destroy($id);
+        return redirect('batches')->with('flash_message','batche deleted');
     }
 }
