@@ -5,7 +5,7 @@
 
                 <div class="card">
                     <div class="card-hedder text-center">
-                        <h2>Students artisan </h2>
+                        <h2>Students</h2>
                     </div>
                     <div class="card-body">
                         <a href="{{ url('/students/create') }}" class="btn btn-outline-success btn-sm" title="Add New Students"> Add

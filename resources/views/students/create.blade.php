@@ -12,7 +12,7 @@
                 <label>Address</label><br>
                 <input type="text" name="address" id="address" class="form-control" required><br>
                 <label>Mobile</label><br>
-                <input type="text" name="mobile" id="obile" class="form-control" required><br>
+                <input type="number" name="mobile" id="obile" class="form-control" required><br>
                  <input type="submit" value="Save" class="btn btn-outline-success">
             </form>
         </div>

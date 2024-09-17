@@ -15,7 +15,7 @@
                 <label>Address</label><br>
                 <input type="text" name="address" id="address" value="{{ $teacher->address }}" required class="form-control"><br>
                 <label>Mobile</label><br>
-                <input type="text" name="mobile" id="mobile" value="{{ $teacher->mobile }}" required class="form-control"><br>
+                <input type="number" name="mobile" id="mobile" value="{{ $teacher->mobile }}" required class="form-control"><br>
                 <input type="submit" value="Update" class="btn btn-success">
             </form>
         </div>
