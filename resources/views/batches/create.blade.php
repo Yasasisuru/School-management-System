@@ -12,7 +12,7 @@
                 <label>Course name</label><br>
                 <input type="text" name="course_id" id="course_id" class="form-control" required><br>
                 <label>Start Date</label><br>
-                <input type="text" name="start_date" id="start_date" class="form-control" required><br>
+                <input type="date" name="start_date" id="start_date" class="form-control" required><br>
                  <input type="submit" value="Save" class="btn btn-outline-success">
             </form>
         </div>
