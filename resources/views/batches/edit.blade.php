@@ -13,7 +13,13 @@
                 <label>Name</label><br>
                 <input type="text" name="name" id="name" value="{{ $batches->name }}" class="form-control" required><br>
                 <label>course_id</label><br>
-                <input type="text" name="course_id" id="course_id" value="{{ $batches->course_id }}" required class="form-control"><br>
+                <select class="form-control"name="course_id" id="course_id"><br>
+                    @foreach ($courses as $id=>$name)
+                    <option value="{{$id}}">{{$name}}</option>
+                    @endforeach
+
+
+                  </select>
                 <label>start_date</label><br>
                 <input type="date" name="start_date" id="start_date" value="{{ $batches->start_date }}" required class="form-control"><br>
                 <input type="submit" value="Update" class="btn btn-success">

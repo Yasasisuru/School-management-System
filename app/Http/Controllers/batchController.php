@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Batch;
+use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -22,7 +23,9 @@ class batchController extends Controller
      */
     public function create()
     {
-        return view('Batches.create');
+       $courses= Course::pluck('name','id');
+       return view('batches.create',compact('courses'));
+
     }
 
     /**
@@ -49,8 +52,8 @@ class batchController extends Controller
      */
     public function edit(string $id)
     {
-        $batches= Batch::find($id);
-        return view('batches.edit')->with('batches', $batches);
+        $courses= Course::pluck('name','id');
+        return view('batches.create',compact('courses'));
     }
 
     /**

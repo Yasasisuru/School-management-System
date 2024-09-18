@@ -28,7 +28,7 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $item->name }}</td>
-                                            <td>{{ $item->course_id }}</td>
+                                            <td>{{ $item->course->name}}</td>
                                             <td>{{ $item->start_date}}</td>
                                             <td>
                                                 <a href="{{ url('/batches/' . $item->id) }}" title="view batches"><button
