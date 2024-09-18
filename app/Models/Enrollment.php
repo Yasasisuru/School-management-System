@@ -14,4 +14,12 @@ class Enrollment extends Model
     use HasFactory;
 
 
+    public function student(){
+        return $this->belongsTo(Students::class);
+    }
+    public function batch(){
+        return $this->belongsTo(Batch::class);
+    }
+
+
 }
