@@ -21,7 +21,8 @@ class PaymentController extends Controller
      */
     public function create()
     {
-        return view('payments.create');
+        $payments= Payment::pluck('enroll_no','id');
+        return view('payments.create',compact('payments'));
     }
 
     /**

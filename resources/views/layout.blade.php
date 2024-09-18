@@ -43,7 +43,7 @@
                     <a href="{{ url('/courses') }}" class="list-group-item list-group-item-action bg-col ">Courses</a>
                     <a href="{{ url('/batches') }}" class="list-group-item list-group-item-action bg-col ">Batches</a>
                     <a href="{{ url('/enrollments') }}" class="list-group-item list-group-item-action bg-col ">Enrollment</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-col ">payments</a>
+                    <a href="{{ url('/payments') }}" class="list-group-item list-group-item-action bg-col ">payments</a>
                 </div>
             </div>
             <div class="col-md-9 ">
