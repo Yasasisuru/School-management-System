@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Enrollment;
 use App\Models\Payment;
 use Illuminate\Http\Request;
 
@@ -21,8 +21,11 @@ class PaymentController extends Controller
      */
     public function create()
     {
-        $payments= Payment::pluck('enroll_no','id');
-        return view('payments.create',compact('payments'));
+
+
+    $enrollments = Enrollment::pluck('enroll_no', 'id'); // Adjust this line to get the enrollment names and ids
+    return view('payments.create', compact('enrollments'));
+
     }
 
     /**

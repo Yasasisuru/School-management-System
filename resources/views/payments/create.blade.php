@@ -7,14 +7,12 @@
         <div class="card-body">
             <form action="{{url('payments')}}" method="post">
                 {!! csrf_field() !!}
-                <label>enroll_no</label><br>
-                <select class="form-control"name="enrollment_id" id="enrollment_id"><br>
-                    @foreach ($enrollments as $id=>$name)
-                    <option value="{{$id}}">{{$name}}</option>
+                <label>Enroll No</label><br>
+                <select class="form-control" name="enrollment_id" id="enrollment_id"><br>
+                    @foreach ($enrollments as $id => $enroll_no)
+                        <option value="{{ $id }}">{{ $enroll_no }}</option>
                     @endforeach
-
-
-                  </select>
+                </select>
 
                 <label>date</label><br>
                 <input type="date" name="date" id="date" class="form-control" required><br>
