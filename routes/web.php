@@ -27,3 +27,5 @@ Route::resource('/enrollments',EnrollmentControlelr::class);
 Route::resource('/payments',PaymentController::class);
 
 Route::resource('/home',homeController::class);
+
+Route::get('/', [HomeController::class, 'index'])->name('home');

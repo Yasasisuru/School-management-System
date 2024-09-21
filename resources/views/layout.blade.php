@@ -14,8 +14,9 @@
 
     }
     .bg-col{
-        background:rgb(185, 255, 239);
+        background:rgb(178, 209, 227);
     }
+
 </style>
 
 <body>
@@ -26,18 +27,14 @@
                     <a class="navbar-brand " href="#">
                         <h2>Student Management System.</h2>
                     </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+
                 </nav>
             </div>
         </div>
         <div class="row">
             <div class=" border-right col-md-3 sidebar bg-col">
                 <div class="list-group list-group-flush mt-5 text-center p-2">
-                    <a href="{{ url('/home') }}" class="list-group-item list-group-item-action bg-col ">Home</a>
+                    <a href="{{ url('/') }}" class="list-group-item list-group-item-action bg-col ">Home</a>
                     <a href="{{ url('/students') }}" class="list-group-item list-group-item-action bg-col ">Student</a>
                     <a href="{{ url('/teachers') }}" class="list-group-item list-group-item-action bg-col ">Teacher</a>
                     <a href="{{ url('/courses') }}" class="list-group-item list-group-item-action bg-col ">Courses</a>
