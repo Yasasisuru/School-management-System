@@ -3,6 +3,7 @@
 use App\Http\Controllers\batchController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EnrollmentControlelr;
+use App\Http\Controllers\homeController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\TeacherController;
@@ -24,3 +25,5 @@ Route::resource('/batches',batchController::class);
 Route::resource('/enrollments',EnrollmentControlelr::class);
 
 Route::resource('/payments',PaymentController::class);
+
+Route::resource('/home',homeController::class);
