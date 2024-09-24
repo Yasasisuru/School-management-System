@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Batch;
 use App\Models\Enrollment;
+use App\Models\Students;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -22,7 +24,10 @@ class EnrollmentControlelr extends Controller
      */
     public function create()
     {
-        return view('enrollments.create');
+        $batches=Batch::pluck('name','id');
+        $students=Students::pluck('name','id');
+        return view('enrollments.create', compact('batches','students'));
+        
     }
 
     /**

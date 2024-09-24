@@ -23,7 +23,8 @@ class PaymentController extends Controller
     {
 
 
-    $enrollments = Enrollment::pluck('enroll_no', 'id'); // Adjust this line to get the enrollment names and ids
+    $enrollments = Enrollment::pluck('enroll_no', 'id');
+    
     return view('payments.create', compact('enrollments'));
 
     }
